@@ -11,7 +11,7 @@ import streamlit as st
 # Load data
 @st.cache_data
 def load_data():
-    excel_data = pd.ExcelFile("C:\All Working Folders\Autoroastering\OrionCare Data.xlsx")
+    excel_data = pd.ExcelFile("OrionCare Data.xlsx")
     employee_df = excel_data.parse('Tb_EmployeeDetails')
     service_df = excel_data.parse('Tb_ServiceMaster')
     return employee_df, service_df
