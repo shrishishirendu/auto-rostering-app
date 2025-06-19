@@ -5,5 +5,5 @@ seaborn
 collections
 random
 seaborn
-streamlit
+streamlit>=1.18.0
 openpyxl
