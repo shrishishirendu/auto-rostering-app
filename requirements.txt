@@ -2,8 +2,5 @@ pandas
 numpy
 matplotlib
 seaborn
-collections
-random
-seaborn
-streamlit>=1.18.0
+streamlit>=1.25.0
 openpyxl
