@@ -8,15 +8,28 @@ import seaborn
 import streamlit as st
 
 
-# Load data
-@st.cache_data
-def load_data():
-    excel_data = pd.ExcelFile("OrionCare Data.xlsx")
+st.sidebar.title("Upload Excel File")
+uploaded_excel = st.sidebar.file_uploader("OrionCare Data.xlsx", type=["xlsx"])
+
+if uploaded_excel is not None:
+    excel_data = pd.ExcelFile(uploaded_excel)
     employee_df = excel_data.parse('Tb_EmployeeDetails')
     service_df = excel_data.parse('Tb_ServiceMaster')
-    return employee_df, service_df
+else:
+    st.warning("Please upload the 'OrionCare Data.xlsx' file to continue.")
+    st.stop()
 
-employee_df, service_df = load_data()
+#-----------------------------------------------------------------------------------------#
+# Load data
+#@st.cache_data
+#def load_data():
+#    excel_data = pd.ExcelFile("OrionCare Data.xlsx")
+#    employee_df = excel_data.parse('Tb_EmployeeDetails')
+#    service_df = excel_data.parse('Tb_ServiceMaster')
+#    return employee_df, service_df
+
+#employee_df, service_df = load_data()
+#-----------------------------------------------------------------------------------------#
 
 # Prepare employee features
 employee_features = employee_df[[
@@ -169,16 +182,30 @@ else:
     st.warning("Please upload a shift requirement CSV file where 1 indicates shift required, and 0 means no shift.")
     st.stop()
 
-
+#--------------------------------------------------------------------
 # Load data
-@st.cache_data
-def load_data():
-    excel_data = pd.ExcelFile("OrionCare Data.xlsx")
+#@st.cache_data
+#def load_data():
+#    excel_data = pd.ExcelFile("OrionCare Data.xlsx")
+#    employee_df = excel_data.parse('Tb_EmployeeDetails')
+#    service_df = excel_data.parse('Tb_ServiceMaster')
+#    return employee_df, service_df
+
+#employee_df, service_df = load_data()
+#--------------------------------------------------------------------
+st.sidebar.title("Upload Excel File")
+uploaded_excel = st.sidebar.file_uploader("OrionCare Data.xlsx", type=["xlsx"])
+
+if uploaded_excel is not None:
+    excel_data = pd.ExcelFile(uploaded_excel)
     employee_df = excel_data.parse('Tb_EmployeeDetails')
     service_df = excel_data.parse('Tb_ServiceMaster')
-    return employee_df, service_df
+else:
+    st.warning("Please upload the 'OrionCare Data.xlsx' file to continue.")
+    st.stop()
 
-employee_df, service_df = load_data()
+
+
 
 # Prepare employee features
 employee_features = employee_df[[
