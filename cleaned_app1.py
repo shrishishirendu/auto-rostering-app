@@ -26,9 +26,18 @@ st.sidebar.title("Upload Shift Requirements")
 
 shift_file = st.sidebar.file_uploader("Upload Shift Requirement File (.csv)", type=["csv"])
 
+#if shift_file is None:
+#    st.title("Auto Rostering Solution")
+#    st.info("Please upload a shift requirement CSV file to continue.")
+#   st.stop()
+
 if shift_file is None:
+    st.set_page_config(page_title="Auto Rostering", layout="centered")
     st.title("Auto Rostering Solution")
-    st.info("Please upload a shift requirement CSV file to continue.")
+    st.info("Please upload a shift requirement CSV file using the sidebar.")
+    st.markdown("This tool uses reinforcement learning to allocate staff optimally based on shift requirements.")
+    st.markdown("---")
+    st.markdown("ℹ️ Waiting for your shift file upload...")
     st.stop()
 
 
