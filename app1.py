@@ -7,6 +7,15 @@ from collections import defaultdict
 import random
 import streamlit as st
 
+# Load and display the logo at the top
+logo = Image.open("iSoft logo.png")
+st.image(logo, width=300)  # You can adjust the width as needed
+
+st.markdown("<h1 style='text-align: right;'></h1>", unsafe_allow_html=True)
+
+
+
+
 #def load_data():
 #    excel_data = pd.ExcelFile("C:\All Working Folders\Autoroastering\OrionCare Data.xlsx")
 #    employee_df = excel_data.parse('Tb_EmployeeDetails')
