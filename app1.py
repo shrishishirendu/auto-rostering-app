@@ -9,6 +9,17 @@ import streamlit as st
 from PIL import Image
 import os
 
+# Load and display the logo at the top of the sidebar
+logo = Image.open("iSoft logo.png")
+st.sidebar.image(logo, use_column_width=True)  # Display in sidebar
+
+# Optional: Add heading or placeholder space
+st.markdown("<h1 style='text-align: right;'></h1>", unsafe_allow_html=True)
+
+
+
+
+
 # Load and display the logo at the top
 # logo = Image.open("iSoft logo.png")
 # st.image(logo, width=300)  # You can adjust the width as needed
@@ -17,11 +28,11 @@ import os
 
 # Load and display the logo in the sidebar
 
-logo_path = "iSoft logo.png"
-if os.path.exists(logo_path):
-    st.sidebar.image(logo_path, use_column_width=True)
-else:
-    st.sidebar.warning("Logo not found.")
+#logo_path = "iSoft logo.png"
+#if os.path.exists(logo_path):
+#    st.sidebar.image(logo_path, use_column_width=True)
+#else:
+#    st.sidebar.warning("Logo not found.")
 
 
 #def load_data():
