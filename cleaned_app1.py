@@ -9,13 +9,18 @@ import streamlit as st
 from PIL import Image
 import os
 
+# Load and display the logo at the top
+logo = Image.open("iSoft logo.png")
+st.image(logo, width=300)  # You can adjust the width as needed
+
+st.markdown("<h1 style='text-align: right;'></h1>", unsafe_allow_html=True)
 
 
 
 # Load and encode the logo image
-logo_path = "iSoft logo.png"
-with open(logo_path, "rb") as img_file:
-    logo_base64 = base64.b64encode(img_file.read()).decode()
+#logo_path = "iSoft logo.png"
+#with open(logo_path, "rb") as img_file:
+#    logo_base64 = base64.b64encode(img_file.read()).decode()
 
 # Display the logo in the sidebar
 #st.sidebar.markdown(f"""
