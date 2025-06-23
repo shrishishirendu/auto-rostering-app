@@ -13,9 +13,9 @@ import os
 
 # Load logo from file
 logo_path = "logo.png"  # Ensure this file is in the same folder as your app
-if os.path.exists(logo_path):
-    logo = Image.open(logo_path)
-    st.image(logo, width=150)  # Adjust width as needed
+#if os.path.exists(logo_path):
+logo = Image.open(logo_path)
+st.image(logo, width=150)  # Adjust width as needed
 
 
 #def load_data():
