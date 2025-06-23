@@ -9,20 +9,26 @@ import streamlit as st
 from PIL import Image
 import os
 
+# Load and display the logo in the sidebar
+logo_path = "iSoft logo.png"
+if os.path.exists(logo_path):
+    st.sidebar.image(logo_path, use_column_width=True)
+else:
+    st.sidebar.warning("Logo not found.")
 
 
 # Load and encode the logo image
-logo_path = "iSoft logo.png"
-with open(logo_path, "rb") as img_file:
-    logo_base64 = base64.b64encode(img_file.read()).decode()
+#logo_path = "iSoft logo.png"
+#with open(logo_path, "rb") as img_file:
+#    logo_base64 = base64.b64encode(img_file.read()).decode()
 
 # Display the logo in the sidebar
-st.sidebar.markdown(f"""
-    <div style="text-align: center;">
-        <img src="data:image/png;base64,{logo_base64}" alt="Logo" style="width: 80%; max-width: 150px; margin-bottom: 10px;">
-        <h4>Auto Rostering</h4>
-    </div>
-""", unsafe_allow_html=True)
+#st.sidebar.markdown(f"""
+#    <div style="text-align: center;">
+#        <img src="data:image/png;base64,{logo_base64}" alt="Logo" style="width: 80%; max-width: 150px; margin-bottom: 10px;">
+#        <h4>Auto Rostering</h4>
+#    </div>
+#""", unsafe_allow_html=True)
 
 
 #def load_data():
