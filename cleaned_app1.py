@@ -11,11 +11,18 @@ import os
 
 
 
-# Load logo from file
-logo_path = "logo.png"  # Ensure this file is in the same folder as your app
-#if os.path.exists(logo_path):
-logo = Image.open(logo_path)
-st.image(logo, width=150)  # Adjust width as needed
+# Load and encode the logo image
+logo_path = "iSoft logo.png"
+with open(logo_path, "rb") as img_file:
+    logo_base64 = base64.b64encode(img_file.read()).decode()
+
+# Display the logo in the sidebar
+st.sidebar.markdown(f"""
+    <div style="text-align: center;">
+        <img src="data:image/png;base64,{logo_base64}" alt="Logo" style="width: 80%; max-width: 150px; margin-bottom: 10px;">
+        <h4>Auto Rostering</h4>
+    </div>
+""", unsafe_allow_html=True)
 
 
 #def load_data():
