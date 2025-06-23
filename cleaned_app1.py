@@ -6,6 +6,17 @@ import seaborn as sns
 from collections import defaultdict
 import random
 import streamlit as st
+from PIL import Image
+import os
+
+
+
+# Load logo from file
+logo_path = "logo.png"  # Ensure this file is in the same folder as your app
+if os.path.exists(logo_path):
+    logo = Image.open(logo_path)
+    st.image(logo, width=150)  # Adjust width as needed
+
 
 #def load_data():
 #    excel_data = pd.ExcelFile("C:\All Working Folders\Autoroastering\OrionCare Data.xlsx")
