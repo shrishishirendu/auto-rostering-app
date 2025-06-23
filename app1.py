@@ -6,6 +6,7 @@ import seaborn as sns
 from collections import defaultdict
 import random
 import streamlit as st
+from PIL import Image
 
 # Load and display the logo at the top
 logo = Image.open("iSoft logo.png")
