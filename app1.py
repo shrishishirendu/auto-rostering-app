@@ -11,7 +11,8 @@ import os
 
 # Load and display the logo at the top of the sidebar
 logo = Image.open("iSoft logo.png")
-st.sidebar.image(logo, use_column_width=True)  # Display in sidebar
+st.sidebar.image(logo, use_container_width=True)   # Display in sidebar
+#st.sidebar.image(logo, use_column_width=True)  # Display in sidebar
 
 # Optional: Add heading or placeholder space
 st.markdown("<h1 style='text-align: right;'></h1>", unsafe_allow_html=True)
